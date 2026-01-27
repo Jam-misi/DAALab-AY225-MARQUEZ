@@ -1,4 +1,5 @@
 import time
+import os
 
 def bubble_sort(arr):
     """Sorts an array using bubble sort algorithm."""
@@ -102,7 +103,8 @@ def display_menu():
     print("*"*50)
 
 if __name__ == "__main__":
-    filename = "dataset.txt"
+    filename = os.path.join(os.path.dirname(__file__), "dataset.txt")
+
     
     while True:
         display_menu()

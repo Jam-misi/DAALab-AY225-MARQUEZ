@@ -1,4 +1,5 @@
 import time
+import os
 
 def bubble_sort(arr):
     """
@@ -56,7 +57,7 @@ def read_numbers_from_file(filename):
 
 if __name__ == "__main__":
     program_start = time.perf_counter()
-    filename = "dataset.txt"  # Change to your file name
+    filename = os.path.join(os.path.dirname(__file__), "dataset.txt")
 
     # Step 1: Read numbers from file
     data = read_numbers_from_file(filename)
