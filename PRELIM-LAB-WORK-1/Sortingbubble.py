@@ -9,7 +9,7 @@ def bubble_sort(arr):
     for i in range(n):
         swapped = False
         for j in range(0, n - i - 1):
-            if arr_copy[j] < arr_copy[j + 1]:
+            if arr_copy[j] > arr_copy[j + 1]:
                 arr_copy[j], arr_copy[j + 1] = arr_copy[j + 1], arr_copy[j]
                 swapped = True
         if not swapped:
@@ -26,7 +26,7 @@ def insertion_sort(arr):
     for i in range(1, len(arr_copy)):
         key = arr_copy[i]
         j = i - 1
-        while j >= 0 and arr_copy[j] < key:
+        while j >= 0 and arr_copy[j] > key:
             arr_copy[j + 1] = arr_copy[j]
             j -= 1
         arr_copy[j + 1] = key
@@ -54,7 +54,7 @@ def merge_sort(arr):
         i = j = 0
         
         while i < len(left) and j < len(right):
-            if left[i] >= right[j]:
+            if left[i] <= right[j]:
                 result.append(left[i])
                 i += 1
             else:
@@ -93,13 +93,13 @@ def display_menu():
     """Display the menu options."""
     print("\n" + "="*50)
     print("         SORTING ALGORITHM MENU")
-    print("-"*50)
+    print("="*50)
     print("1. Bubble Sort")
     print("2. Insertion Sort")
     print("3. Merge Sort")
     print("4. Compare All Algorithms")
     print("5. Exit")
-    print("*"*50)
+    print("="*50)
 
 if __name__ == "__main__":
     filename = "dataset.txt"
